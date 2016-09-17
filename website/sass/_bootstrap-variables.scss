@@ -1,23 +1,48 @@
-// Colors
-$gray-base: #000;
-$gray-darker: lighten($gray-base, 13.5%);
-$gray-dark: lighten($gray-base, 20%);
-$gray: lighten($gray-base, 33.5%);
-$gray-light: lighten($gray-base, 46.7%);
-$gray-lighter: lighten($gray-base, 93.5%);
+/////////////////////////////////////////////////////////////////////////////////////////
+//Overide default bootstrap styling using IDs, or pulling variables from the main list //
+/////////////////////////////////////////////////////////////////////////////////////////
+//TODO:
+//1) Basic HTML backbone of content
+//2) Sick Font
+//3) Pick a color palette
+//4) Billy - Format Navbar & Jumbotron
+/////////////////////////////////////////////////////////////////////////////////////////
+//                                 Brand Color Map                                     //
+/////////////////////////////////////////////////////////////////////////////////////////
+$brand-colors: (
+  'primary': #F37257, 
+  'accent': #517281,
+  'secondary': #F68D5C,
+  'foreground': #7895A2,
+  'background': #F4D27A
+);
+//color map function
+@function brand-color($key: 'primary') {
+  @return map-get($brand-colors, $key);
+}
 
+//example how to use color map : $btn-default-bg: brand-color('primary'); #F37257;
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//nav
+$navbar-default-color: black;
+$navbar-default-bg: white;
+// $navbar-default-border:            darken($navbar-default-bg, 6.5%)
 
 // Body
-$body-bg: #FFF;
+$body-bg: brand-color('background');
+$text-color: brand-color('accent');
 
 // Jumbotron
 .jumbotron{
 	background-image: url("../pictures/jumbotron.jpeg");
 	background-size: cover;
-
 }
-$jumbotron-color: $gray-lighter;
-$jumbotron-heading-color: $gray-light;
 
-//$jumbotron-bg: $gray-lighter;
+$jumbotron-heading-color: brand-color('primary');
+$jumbotron-color: brand-color('primary');
 
+//button colors
+$btn-default-bg: brand-color('secondary');
+$btn-default-border: darken($btn-default-bg, 5%);
+$btn-default-color: white;
