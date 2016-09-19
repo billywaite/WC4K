@@ -22,12 +22,34 @@ $brand-colors: (
 }
 
 //example how to use color map : $btn-default-bg: brand-color('primary'); #F37257;
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////
+//                                      Fonts                                          //
+/////////////////////////////////////////////////////////////////////////////////////////
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+$font-family-sans-serif:  Montserrat;
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+//                                      Navbar                                         //
+/////////////////////////////////////////////////////////////////////////////////////////
+
 
 //nav
 $navbar-default-color: black;
 $navbar-default-bg: white;
 // $navbar-default-border:            darken($navbar-default-bg, 6.5%)
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+//                                      Navbar                                         //
+/////////////////////////////////////////////////////////////////////////////////////////
+
 
 // Body
 $body-bg: brand-color('background');
@@ -38,7 +60,7 @@ $text-color: brand-color('accent');
 	background-image: url("../pictures/jumbotron.jpeg");
 	background-size: cover;
 }
-
+$jumbotron-padding: 8%;
 $jumbotron-heading-color: brand-color('primary');
 $jumbotron-color: brand-color('primary');
 
